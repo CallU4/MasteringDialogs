@@ -11,16 +11,15 @@ class CustomDialogFrag : DialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
 
+        var phone = arguments?.getString("phone")
         var builder = AlertDialog.Builder(activity)
 
-        return builder.setTitle("Hello world!").setIcon(android.R.drawable.ic_dialog_alert)
-            .setMessage("To close?")
-            .setPositiveButton("OK", null)
-        .create()
-    }
-
-    private fun showLogs() {
-        Log.d("MyTag", "Shown Dialog")
+        return builder
+            .setTitle("Attention")
+            .setIcon(android.R.drawable.ic_dialog_alert)
+            .setMessage("Delete $phone?")
+            .setPositiveButton("Ok", null)
+            .create()
     }
 
 
